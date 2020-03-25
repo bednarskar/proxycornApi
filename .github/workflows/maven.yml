@@ -30,10 +30,4 @@ jobs:
         name: proxycorn-api
     # Directory containing files to upload
         path: /home/runner/work/proxycornApi/proxycornApi/target/
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: /home/runner/work/proxycornApi/proxycornApi/target/
-    - working-directory: /home/runner/work/proxycornApi/proxycornApi
-    - name: Update package
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}
+        run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}
