@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deployment Action
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH_TOKEN2 }} -X
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar/proxycornApi/com/bednarskar/proxycorn-api/1.0/ -Dtoken=${{ secrets.GH_TOKEN2 }} -X
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
       with:
