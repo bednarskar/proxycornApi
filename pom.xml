@@ -60,17 +60,17 @@
             </distributionManagement>
         </profile>
     </profiles>
-<!--    <distributionManagement>-->
+    <distributionManagement>
 <!--        <repository>-->
 <!--            <id>bintray-bednarskar-artifacts</id>-->
 <!--            <name>bednarskar-artifacts</name>-->
 <!--            <url>https://api.bintray.com/maven/bednarskar/artifacts/proxycorn-api/;publish=1</url>-->
 <!--        </repository>-->
-<!--        <snapshotRepository>-->
-<!--            <id>github</id>-->
-<!--            <name>GitHub OWNER Apache Maven Packages</name>-->
-<!--            <url>https://maven.pkg.github.com/bednarskar/proxycornApi</url>-->
-<!--        </snapshotRepository>-->
-<!--        </distributionManagement>-->
+        <repository>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/bednarskar/proxycornApi</url>
+        </repository>
+        </distributionManagement>
 
 </project>
