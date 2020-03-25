@@ -33,7 +33,7 @@ jobs:
       uses: benjefferies/create-bintray-package@master
       with:
             bintray-user: ${{ secrets.JFROG_USER }}
-            bintray-token: ${{ secrets.JFROG_API_SECRET }}
+            bintray-token: ${{ secrets.JFROG_API_SECRET2 }}
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
