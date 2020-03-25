@@ -36,15 +36,15 @@ jobs:
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
-#             package-url: https://maven.pkg.github.com/bednarskar
-            package-url: https://github.com/bednarskar/proxycornApi
+            package-url: https://maven.pkg.github.com/bednarskar/proxycornApi
+#             package-url: https://github.com/bednarskar/proxycornApi
             package-license: Copyfree
     - name: Release
       uses: qcastel/github-actions-maven-release@master
       with:
         release-branch-name: "master"
         gpg-enabled: "false"
-        maven-repo-server-id: bintray-bednarskar-artifacts
-        maven-repo-server-username: bednarskar-artifacts
-        maven-repo-server-password: ${{ secrets.JFROG_API_SECRET2 }}
+        maven-repo-server-id: bednarskar
+        maven-repo-server-username: proxycorn-api
+        maven-repo-server-password: ${{ secrets.GH_TOKEN2 }}
         maven-args: "-Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH_TOKEN2 }} -X"
