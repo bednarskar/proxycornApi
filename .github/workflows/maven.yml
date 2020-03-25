@@ -22,8 +22,11 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn clean package
-    - name: deploy-action
-      uses: rohit-gohri/deploy-action@v0.1.0
+    - name: Deployment Action
+      uses: chrnorm/deployment-action@v1.2.0
+      with:
+        # Github repository token
+        token: ${{ GH_TOKEN2 }}
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
       with:
