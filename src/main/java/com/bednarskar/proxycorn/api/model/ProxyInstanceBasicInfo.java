@@ -11,6 +11,7 @@ public class ProxyInstanceBasicInfo {
     private Enum<Protocol> protocol;
     private String ip;
     private Integer port;
+    private final Integer maxPort = 65535;
 
     public ProxyInstanceBasicInfo(Enum<Protocol> protocol, String ip, Integer port) throws Exception {
         validate(port);
@@ -19,6 +20,6 @@ public class ProxyInstanceBasicInfo {
         this.port = port;
     }
     private void validate(Integer port) throws Exception {
-        if (port < 0 || port >= 65535) throw new InvalidPortException("Invalid port: " + port);
+        if (port < 0 || port >= maxPort) throw new InvalidPortException("Invalid port: " + port);
     }
 }
