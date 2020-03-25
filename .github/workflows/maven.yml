@@ -31,4 +31,4 @@ jobs:
     # Directory containing files to upload
         path: /home/runner/work/proxycornApi/proxycornApi/target/
     - name: Update package
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar/proxycorn-api/ -Dtoken=${{ secrets.GH_TOKEN2 }} -X
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar/proxycorn-api/ -Dtoken={{ secrets.GH_TOKEN2 }} -X
