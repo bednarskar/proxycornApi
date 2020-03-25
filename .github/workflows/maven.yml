@@ -47,6 +47,6 @@ jobs:
         release-branch-name: "master"
         gpg-enabled: "false"
         maven-repo-server-id: bintray-bednarskar-artifacts
-        maven-repo-server-username: bednarskar
+        maven-repo-server-username: bednarskar-artifacts
         maven-repo-server-password: ${{ secrets.JFROG_API_SECRET2 }}
-        maven-args: ""
+        maven-args: "-Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH_TOKEN2 }} -X"
