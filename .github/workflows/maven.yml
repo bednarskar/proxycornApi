@@ -36,8 +36,8 @@ jobs:
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
-            package-url: https://maven.pkg.github.com/bednarskar/proxycornApi
-#             package-url: https://github.com/bednarskar/proxycornApi
+#             package-url: https://maven.pkg.github.com/bednarskar
+            package-url: https://github.com/bednarskar/proxycornApi
             package-license: Copyfree
     - name: Release
       uses: qcastel/github-actions-maven-release@master
