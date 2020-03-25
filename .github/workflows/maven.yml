@@ -23,3 +23,10 @@ jobs:
     - name: Build with Maven
       run: mvn clean package
  
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+    # Artifact name
+        name: proxycorn-api
+    # Directory containing files to upload
+        path: /home/runner/work/proxycornApi/proxycornApi/target/
