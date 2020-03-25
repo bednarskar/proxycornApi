@@ -42,7 +42,7 @@
         <repository>
             <id>bintray-bednarskar-artifacts</id>
             <name>bednarskar-artifacts</name>
-            <url>https://api.bintray.com/maven/bednarskar/artifacts/[PACKAGE_NAME]/;publish=1</url>
+            <url>https://api.bintray.com/maven/bednarskar/artifacts/proxycorn-api/;publish=1</url>
         </repository>
     </distributionManagement>
 
