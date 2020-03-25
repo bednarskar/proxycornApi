@@ -22,12 +22,11 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn clean package
+      
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
     - name: Deployment Action
-      uses: chrnorm/deployment-action@v1.2.0
-      with:
-        # Github repository token
-        token: ${{ secrets.GH_TOKEN2 }}
-    - name: artifact-create
       run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH_TOKEN2 }} -X
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
@@ -37,9 +36,8 @@ jobs:
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
-            package-description: proxycorn-api
-            package-url: https://maven.pkg.github.com/bednarskar
-            #package-url: https://github.com/bednarskar/proxycornApi
+#             package-url: https://maven.pkg.github.com/bednarskar
+            package-url: https://github.com/bednarskar/proxycornApi
             package-license: Copyfree
     - name: Release
       uses: qcastel/github-actions-maven-release@master
