@@ -30,7 +30,7 @@ jobs:
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
-            package-description: Example
+            package-description: proxycorn-api
             package-url: https://github.com/bednarskar/proxycornApi
             package-license: MIT
     - name: Release
