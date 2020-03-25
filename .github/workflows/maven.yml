@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deployment Action
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar/proxycornApi/com/bednarskar/proxycorn-api/1.0/ -Dtoken=${{ secrets.GH_TOKEN2 }} -X
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar/proxycornApi -Dtoken=${{ secrets.GH_TOKEN2 }} -X
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
       with:
@@ -36,8 +36,7 @@ jobs:
             owner: bednarskar
             repo: artifacts
             package-name: proxycorn-api
-#             package-url: https://maven.pkg.github.com/bednarskar
-            package-url: https://github.com/bednarskar/proxycornApi
+            package-url: https://github.com/bednarskar/
             package-license: Copyfree
     - name: Release
       uses: qcastel/github-actions-maven-release@master
