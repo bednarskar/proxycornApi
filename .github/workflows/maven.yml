@@ -33,5 +33,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - working-directory: /home/runner/work/proxycornApi/proxycornApi
       - name: Update package
         run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}
