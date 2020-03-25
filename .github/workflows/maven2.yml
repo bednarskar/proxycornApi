@@ -1,0 +1,52 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: 11
+    - name: Build with Maven
+      run: mvn clean package
+    - name: Deployment Action
+      uses: chrnorm/deployment-action@v1.2.0
+      with:
+        # Github repository token
+        token: ${{ secrets.GH_TOKEN2 }}
+    - name: artifact-create
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }} -X
+    - name: Create Package
+      uses: benjefferies/create-bintray-package@master
+      with:
+            bintray-user: bednarskar
+            bintray-token: ${{ secrets.JFROG_API_SECRET2 }}
+            owner: bednarskar
+            repo: artifacts
+            package-name: proxycorn-api
+            package-description: proxycorn-api
+            package-url: https://maven.pkg.github.com/bednarskar
+            #package-url: https://github.com/bednarskar/proxycornApi
+            package-license: Copyfree
+    - name: Release
+      uses: qcastel/github-actions-maven-release@master
+      with:
+        release-branch-name: "master"
+        gpg-enabled: "false"
+        maven-repo-server-id: bintray-bednarskar-artifacts
+        maven-repo-server-username: bednarskar-artifacts
+        maven-repo-server-password: ${{ secrets.JFROG_API_SECRET2 }}
+        maven-args: "-Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }} -X"
