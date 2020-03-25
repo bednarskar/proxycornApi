@@ -22,3 +22,12 @@ jobs:
         java-version: 11
     - name: Build with Maven
       run: mvn clean package
+      
+      id: upload
+    - uses: actions/checkout@v1
+    - run: mkdir -p path/to/artifact
+    - run: echo hello > path/to/artifact/world.txt
+    - uses: actions/upload-artifact@v1
+      with:
+        name: my-artifact
+        path: path/to/artifact
