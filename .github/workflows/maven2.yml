@@ -26,9 +26,9 @@ jobs:
       uses: chrnorm/deployment-action@v1.2.0
       with:
         # Github repository token
-        token: ${{ secrets.GH_TOKEN2 }}
+        token: ${{ secrets.GH }}
     - name: artifact-create
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }} -X
+      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
       with:
@@ -38,8 +38,8 @@ jobs:
             repo: artifacts
             package-name: proxycorn-api
             package-description: proxycorn-api
-            package-url: https://maven.pkg.github.com/bednarskar
-            #package-url: https://github.com/bednarskar/proxycornApi
+#             package-url: https://maven.pkg.github.com/bednarskar
+            package-url: https://github.com/bednarskar/proxycornApi
             package-license: Copyfree
     - name: Release
       uses: qcastel/github-actions-maven-release@master
@@ -49,4 +49,4 @@ jobs:
         maven-repo-server-id: bintray-bednarskar-artifacts
         maven-repo-server-username: bednarskar-artifacts
         maven-repo-server-password: ${{ secrets.JFROG_API_SECRET2 }}
-        maven-args: "-Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }} -X"
+        maven-args: "-Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}"
