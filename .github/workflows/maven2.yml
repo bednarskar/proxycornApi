@@ -28,7 +28,7 @@ jobs:
         # Github repository token
         token: ${{ secrets.GH }}
     - name: artifact-create
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }} -x
+      run: mvn -X deploy -Dregistry=https://maven.pkg.github.com/bednarskar -Dtoken=${{ secrets.GH }}
     - name: Create Package
       uses: benjefferies/create-bintray-package@master
       with:
