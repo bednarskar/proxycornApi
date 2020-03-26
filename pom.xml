@@ -38,37 +38,10 @@
             </resource>
         </resources>
     </build>
-    <profiles>
-        <profile>
-            <id>github</id>
-            <distributionManagement>
-                <repository>
-                    <id>github</id>
-                    <name>GitHub OWNER Apache Maven Packages</name>
-                    <url>https://maven.pkg.github.com/bednarskar/proxycornApi</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-        <profile>
-            <id>bintray</id>
-            <distributionManagement>
-                <repository>
-                    <id>bintray-bednarskar-artifacts</id>
-                    <name>bednarskar-artifacts</name>
-                    <url>https://api.bintray.com/maven/bednarskar/artifacts/proxycorn-api/;publish=1</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
     <distributionManagement>
-<!--        <repository>-->
-<!--            <id>bintray-bednarskar-artifacts</id>-->
-<!--            <name>bednarskar-artifacts</name>-->
-<!--            <url>https://api.bintray.com/maven/bednarskar/artifacts/proxycorn-api/;publish=1</url>-->
-<!--        </repository>-->
         <repository>
             <id>github</id>
-            <name>GitHub OWNER Apache Maven Packages</name>
+            <name>GitHub bednarskar Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/bednarskar/proxycornApi</url>
         </repository>
         </distributionManagement>
